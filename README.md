@@ -1,66 +1,48 @@
-## Foundry
+# CK Blockchain Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Project Overview
 
-Foundry consists of:
+This repository contains a blockchain-based lottery contract implementation.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Architecture Diagram
 
-## Documentation
+Below is the architectural scheme of the project:
 
-https://book.getfoundry.sh/
+![Project Architecture Scheme](./Scheme.png)
 
-## Usage
+## Project Structure
 
-### Build
+- `src/`: Contains the smart contract source code
+  - `LotteryContract.sol`: Main lottery contract implementation
+  - `LotteryStorage.sol`: Storage contract for the lottery
+- `script/`: Contains deployment scripts
+- `test/`: Contains test files for the contracts
+- `lib/`: External dependencies
 
-```shell
-$ forge build
+## Getting Started
+
+This project uses Foundry for development and testing. Follow the instructions below to get started.
+
+### Prerequisites
+
+- Foundry
+
+### Installation
+
+```bash
+git clone <repository-url>
+cd project1
+forge install
 ```
 
-### Test
+### Testing
 
-```shell
-$ forge test
+```bash
+forge test
 ```
 
-### Format
+### Deployment
 
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```bash
+forge script script/LotteryContractDeploy.s.sol
 ```
